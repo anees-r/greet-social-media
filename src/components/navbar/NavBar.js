@@ -23,7 +23,10 @@ const Navbar = () => {
         {!darkMode ? <DarkModeRoundedIcon /> : <LightModeRoundedIcon />}
         <NotificationsRoundedIcon />
         <MailRoundedIcon />
-        <PersonRoundedIcon />
+        <img
+          src="https://preview.redd.it/i-genuinely-cannot-stand-dionysus-design-v0-wo5b66trxsqd1.jpg?width=677&format=pjpg&auto=webp&s=c8ad179a40e34d577e7d2153a28da6e3431a2304"
+          alt=""
+        />
       </div>
     </div>
   );
