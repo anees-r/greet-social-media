@@ -1,24 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Login from "./pages/login/Login";
+import Register from "./pages/register/Register";
+import { BrowserRouter, Routes, Route, Outlet } from "react-router";
+import Home from "./pages/home/Home";
+import Profile from "./pages/profile/Profile";
+import Navbar from "./components/navbar/NavBar";
+import RightBar from "./components/rightbar/RightBar";
+import LeftBar from "./components/leftbar/LeftBar";
 
 function App() {
+  const Layout = () => {
+    return (
+      <>
+        <Navbar />
+        {/* <RightBar />
+        <Outlet />
+        <LeftBar /> */}
+      </>
+    );
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route exact path="/" element={<Layout />}>
+            {/* Now these routes are children that will be rendered in place of outlet based on path */}
+            <Route exact path="" element={<Home />} />
+            <Route exact path="profile/:d" element={<Profile />} />
+          </Route>
+          <Route exact path="/login" element={<Login />} />
+          <Route exact path="/register" element={<Register />} />
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 
