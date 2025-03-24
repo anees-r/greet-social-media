@@ -7,22 +7,32 @@ import Profile from "./pages/profile/Profile";
 import Navbar from "./components/navbar/NavBar";
 import RightBar from "./components/rightbar/RightBar";
 import LeftBar from "./components/leftbar/LeftBar";
+import "./bg-main.scss";
+import { useState } from "react";
 
 function App() {
   const currentUser = true;
+  const [isDarkMode, setIsDarkMode] = useState(true);
+
+  const toggleMode = () => {
+    setIsDarkMode(!isDarkMode);
+  };
 
   const Layout = () => {
     return (
-      <>
-        <Navbar />
-        <div style={{ display: "flex", marginTop: "10px" }}>
+      <div className={`${isDarkMode ? "theme-dark" : "theme-light"}`}>
+        <Navbar toggleMode={toggleMode} isDarkMode={isDarkMode} />
+        <div
+          style={{ display: "flex", paddingTop: "10px" }}
+          className="bg-main"
+        >
           <LeftBar />
           <div style={{ flex: "6" }}>
             <Outlet />
           </div>
           <RightBar />
         </div>
-      </>
+      </div>
     );
   };
 

@@ -1,68 +1,73 @@
+@import "../../styles.scss";
+
 .leftbar{
-    flex: 2;
-    position: sticky;
-    top: 60px;
-    left: 10px;
-    margin-right: 20px;
-    height: calc(100vh - 60px);
-    overflow-y: auto;
-    background-color: white;
-    &::-webkit-scrollbar{
-        width: 5px;
-    }
-    border-radius: 15px;
-    .container{
-        padding: 10px 20px;
-        span{
-            font-size: 12px;
+    @include themify($themes){
+        flex: 2;
+        position: sticky;
+        top: 60px;
+        left: 10px;
+        margin-right: 20px;
+        height: calc(100vh - 60px);
+        overflow-y: auto;
+        background-color: themed("bg");
+        color: themed("textColor");
+        &::-webkit-scrollbar{
+            width: 5px;
         }
-        .menu{
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            justify-content: center;
-            margin-top: 10px;
-            .item{
-                
-                padding: 5px;
-                border-radius: 10px;
+        border-radius: 15px;
+        .container{
+            padding: 10px 20px;
+            span{
+                font-size: 12px;
+            }
+            .menu{
                 display: flex;
+                flex-direction: column;
                 gap: 10px;
-                align-items: center;
-                cursor: pointer;
-                transition: background-color 0.2s;
-
-                img{
-                    height: 25px;
-                    width: 25px;
-                    border-radius: 100px;
-                    object-fit: cover;
-
-                }
-                span{
-                    color: rgb(80, 80, 80);
-                    font-size: 14px
+                justify-content: center;
+                margin-top: 10px;
+                .item{
                     
-                }
-            }
-            .item:hover{
-                background-color: #f5f4f7;
+                    padding: 5px;
+                    border-radius: 10px;
+                    display: flex;
+                    gap: 10px;
+                    align-items: center;
+                    cursor: pointer;
+                    transition: background-color 0.2s;
 
-            }
-            .item:active{
-                background-color: rgb(239, 236, 242);
+                    img{
+                        height: 25px;
+                        width: 25px;
+                        border-radius: 100px;
+                        object-fit: cover;
+
+                    }
+                    span{
+                        color: themed("textColorSoft");
+                        font-size: 14px
+                        
+                    }
+                }
+                .item:hover{
+                    background-color: themed("hover");
+
+                }
+                .item:active{
+                    background-color: themed("active");
+                }
             }
         }
     }
-}
 
-hr{
-    margin: 10px 0;
-    border: none;
-    height: 0.5px;
-    background-color: lightgray;
-}
-img{
-    width: 30px;
-    height: 30px;
+    hr{
+        margin: 10px 0;
+        border: none;
+        height: 0.5px;
+        background-color: #888888;
+    }
+    img{
+        width: 30px;
+        height: 30px;
+    }
 }

@@ -7,9 +7,7 @@ import MailRoundedIcon from "@mui/icons-material/MailRounded";
 import PersonRoundedIcon from "@mui/icons-material/PersonRounded";
 import NotificationsRoundedIcon from "@mui/icons-material/NotificationsRounded";
 
-const Navbar = () => {
-  const darkMode = false;
-  document.body.style.backgroundColor = "rgb(239, 236, 242)";
+const Navbar = (props) => {
   return (
     <div className="navbar">
       <span>Greet :)</span>
@@ -20,7 +18,13 @@ const Navbar = () => {
         </button>
       </div>
       <div className="right">
-        {!darkMode ? <DarkModeRoundedIcon /> : <LightModeRoundedIcon />}
+        <div onClick={props.toggleMode} style={{ cursor: "pointer" }}>
+          {!props.isDarkMode ? (
+            <DarkModeRoundedIcon />
+          ) : (
+            <LightModeRoundedIcon />
+          )}
+        </div>
         <NotificationsRoundedIcon />
         <MailRoundedIcon />
         <img
