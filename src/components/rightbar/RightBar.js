@@ -1,6 +1,12 @@
 import React from "react";
 import "./RightBar.scss";
+
+import { useContext } from "react";
+import { AuthContext } from "../../context/AuthContext";
+
 const RightBar = () => {
+  const { currentUser } = useContext(AuthContext);
+
   return (
     <div className="rightbar">
       {/*  */}
@@ -9,11 +15,8 @@ const RightBar = () => {
         <span>Friend Requests</span>
         <div className="user">
           <div className="userInfo">
-            <img
-              src="https://preview.redd.it/i-genuinely-cannot-stand-dionysus-design-v0-wo5b66trxsqd1.jpg?width=677&format=pjpg&auto=webp&s=c8ad179a40e34d577e7d2153a28da6e3431a2304"
-              alt=""
-            />
-            <span>Deeonyos</span>
+            <img src={currentUser.pfp} alt="user-profile-icon" />
+            <span>{currentUser.name}</span>
           </div>
           <div className="buttons">
             <button>Accept</button>
@@ -22,11 +25,8 @@ const RightBar = () => {
         </div>
         <div className="user">
           <div className="userInfo">
-            <img
-              src="https://preview.redd.it/i-genuinely-cannot-stand-dionysus-design-v0-wo5b66trxsqd1.jpg?width=677&format=pjpg&auto=webp&s=c8ad179a40e34d577e7d2153a28da6e3431a2304"
-              alt=""
-            />
-            <span>Deeonyos</span>
+            <img src={currentUser.pfp} alt="user-profile-icon" />
+            <span>{currentUser.name}</span>
           </div>
           <div className="buttons">
             <button>Accept</button>
@@ -41,48 +41,36 @@ const RightBar = () => {
         <span>Recent Activities</span>
         <div className="user">
           <div className="userInfo">
-            <img
-              src="https://preview.redd.it/i-genuinely-cannot-stand-dionysus-design-v0-wo5b66trxsqd1.jpg?width=677&format=pjpg&auto=webp&s=c8ad179a40e34d577e7d2153a28da6e3431a2304"
-              alt=""
-            />
+            <img src={currentUser.pfp} alt="user-profile-icon" />
             <p>
-              <span>Deeonyos</span> Changed profile picture.
+              <span>{currentUser.name}</span> Changed profile picture.
             </p>
           </div>
           <span>1 minute ago</span>
         </div>
         <div className="user">
           <div className="userInfo">
-            <img
-              src="https://preview.redd.it/i-genuinely-cannot-stand-dionysus-design-v0-wo5b66trxsqd1.jpg?width=677&format=pjpg&auto=webp&s=c8ad179a40e34d577e7d2153a28da6e3431a2304"
-              alt=""
-            />
+            <img src={currentUser.pfp} alt="user-profile-icon" />
             <p>
-              <span>Deeonyos</span> Changed profile picture.
+              <span>{currentUser.name}</span> Changed profile picture.
             </p>
           </div>
           <span>1 minute ago</span>
         </div>
         <div className="user">
           <div className="userInfo">
-            <img
-              src="https://preview.redd.it/i-genuinely-cannot-stand-dionysus-design-v0-wo5b66trxsqd1.jpg?width=677&format=pjpg&auto=webp&s=c8ad179a40e34d577e7d2153a28da6e3431a2304"
-              alt=""
-            />
+            <img src={currentUser.pfp} alt="user-profile-icon" />
             <p>
-              <span>Deeonyos</span> Changed profile picture.
+              <span>{currentUser.name}</span> Changed profile picture.
             </p>
           </div>
           <span>1 minute ago</span>
         </div>
         <div className="user">
           <div className="userInfo">
-            <img
-              src="https://preview.redd.it/i-genuinely-cannot-stand-dionysus-design-v0-wo5b66trxsqd1.jpg?width=677&format=pjpg&auto=webp&s=c8ad179a40e34d577e7d2153a28da6e3431a2304"
-              alt=""
-            />
+            <img src={currentUser.pfp} alt="user-profile-icon" />
             <p>
-              <span>Deeonyos</span> Changed profile picture.
+              <span>{currentUser.name}</span> Changed profile picture.
             </p>
           </div>
           <span>1 minute ago</span>
@@ -95,62 +83,44 @@ const RightBar = () => {
         <span>Online Friends</span>
         <div className="user">
           <div className="userInfo">
-            <img
-              src="https://preview.redd.it/i-genuinely-cannot-stand-dionysus-design-v0-wo5b66trxsqd1.jpg?width=677&format=pjpg&auto=webp&s=c8ad179a40e34d577e7d2153a28da6e3431a2304"
-              alt=""
-            />
+            <img src={currentUser.pfp} alt="user-profile-icon" />
             <div className="online" />
-            <span>Deeonyos</span>
+            <span>{currentUser.name}</span>
           </div>
         </div>
         <div className="user">
           <div className="userInfo">
-            <img
-              src="https://preview.redd.it/i-genuinely-cannot-stand-dionysus-design-v0-wo5b66trxsqd1.jpg?width=677&format=pjpg&auto=webp&s=c8ad179a40e34d577e7d2153a28da6e3431a2304"
-              alt=""
-            />
+            <img src={currentUser.pfp} alt="user-profile-icon" />
             <div className="online" />
-            <span>Deeonyos</span>
+            <span>{currentUser.name}</span>
           </div>
         </div>
         <div className="user">
           <div className="userInfo">
-            <img
-              src="https://preview.redd.it/i-genuinely-cannot-stand-dionysus-design-v0-wo5b66trxsqd1.jpg?width=677&format=pjpg&auto=webp&s=c8ad179a40e34d577e7d2153a28da6e3431a2304"
-              alt=""
-            />
+            <img src={currentUser.pfp} alt="user-profile-icon" />
             <div className="online" />
-            <span>Deeonyos</span>
+            <span>{currentUser.name}</span>
           </div>
         </div>
         <div className="user">
           <div className="userInfo">
-            <img
-              src="https://preview.redd.it/i-genuinely-cannot-stand-dionysus-design-v0-wo5b66trxsqd1.jpg?width=677&format=pjpg&auto=webp&s=c8ad179a40e34d577e7d2153a28da6e3431a2304"
-              alt=""
-            />
+            <img src={currentUser.pfp} alt="user-profile-icon" />
             <div className="online" />
-            <span>Deeonyos</span>
+            <span>{currentUser.name}</span>
           </div>
         </div>
         <div className="user">
           <div className="userInfo">
-            <img
-              src="https://preview.redd.it/i-genuinely-cannot-stand-dionysus-design-v0-wo5b66trxsqd1.jpg?width=677&format=pjpg&auto=webp&s=c8ad179a40e34d577e7d2153a28da6e3431a2304"
-              alt=""
-            />
+            <img src={currentUser.pfp} alt="user-profile-icon" />
             <div className="online" />
-            <span>Deeonyos</span>
+            <span>{currentUser.name}</span>
           </div>
         </div>
         <div className="user">
           <div className="userInfo">
-            <img
-              src="https://preview.redd.it/i-genuinely-cannot-stand-dionysus-design-v0-wo5b66trxsqd1.jpg?width=677&format=pjpg&auto=webp&s=c8ad179a40e34d577e7d2153a28da6e3431a2304"
-              alt=""
-            />
+            <img src={currentUser.pfp} alt="user-profile-icon" />
             <div className="online" />
-            <span>Deeonyos</span>
+            <span>{currentUser.name}</span>
           </div>
         </div>
       </div>

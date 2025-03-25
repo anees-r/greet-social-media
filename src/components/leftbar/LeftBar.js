@@ -1,6 +1,9 @@
 import React from "react";
 import "./LeftBar.scss";
-import AccountCircleRoundedIcon from "@mui/icons-material/AccountCircleRounded";
+import { useContext } from "react";
+import { AuthContext } from "../../context/AuthContext";
+
+// import AccountCircleRoundedIcon from "@mui/icons-material/AccountCircleRounded";
 import PeopleAltRoundedIcon from "@mui/icons-material/PeopleAltRounded";
 import GroupsRoundedIcon from "@mui/icons-material/GroupsRounded";
 import StoreRoundedIcon from "@mui/icons-material/StoreRounded";
@@ -16,19 +19,23 @@ import EmailRoundedIcon from "@mui/icons-material/EmailRounded";
 import SavingsRoundedIcon from "@mui/icons-material/SavingsRounded";
 import LocalLibraryRoundedIcon from "@mui/icons-material/LocalLibraryRounded";
 import SchoolRoundedIcon from "@mui/icons-material/SchoolRounded";
+import { Link } from "react-router-dom";
 
 const LeftBar = () => {
+  const { currentUser } = useContext(AuthContext);
   return (
     <div className="leftbar">
       <div className="container">
         <div className="menu">
-          <div className="item">
-            <img
-              src="https://preview.redd.it/i-genuinely-cannot-stand-dionysus-design-v0-wo5b66trxsqd1.jpg?width=677&format=pjpg&auto=webp&s=c8ad179a40e34d577e7d2153a28da6e3431a2304"
-              alt=""
-            />
-            <span>Deeonysos</span>
-          </div>
+          <Link
+            to={`/profile/${currentUser.id}`}
+            style={{ textDecoration: "none" }}
+          >
+            <div className="item">
+              <img src={currentUser.pfp} alt="user-profile-icon" />
+              <span>{currentUser.name}</span>
+            </div>
+          </Link>
           <div className="item">
             <PeopleAltRoundedIcon />
             <span>Friends</span>

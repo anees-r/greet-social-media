@@ -6,7 +6,6 @@
         position: sticky;
         top: 60px;
         right: 10px;
-        margin-left: 20px;
         height: calc(100vh - 60px);
         overflow-y: auto;
         &::-webkit-scrollbar{
@@ -15,11 +14,13 @@
         display: flex;
         flex-direction: column;
         gap: 10px;
+        padding: 0 20px;
         .container{
             background-color: themed("bg");
             border-radius: 15px;
             padding: 10px 20px;
             color: themed("textColorSoft");
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
             .user{
                 display: flex;
                     flex-direction: row;

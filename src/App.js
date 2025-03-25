@@ -8,15 +8,23 @@ import Navbar from "./components/navbar/NavBar";
 import RightBar from "./components/rightbar/RightBar";
 import LeftBar from "./components/leftbar/LeftBar";
 import "./bg-main.scss";
-import { useState } from "react";
+import { useState, useEffect, useContext } from "react";
+import { AuthContext } from "./context/AuthContext";
 
 function App() {
-  const currentUser = true;
-  const [isDarkMode, setIsDarkMode] = useState(true);
+  const { currentUser } = useContext(AuthContext);
+
+  const [isDarkMode, setIsDarkMode] = useState(
+    JSON.parse(localStorage.getItem("darkMode")) || false
+  );
 
   const toggleMode = () => {
     setIsDarkMode(!isDarkMode);
   };
+
+  useEffect(() => {
+    localStorage.setItem("darkMode", isDarkMode);
+  }, [isDarkMode]);
 
   const Layout = () => {
     return (
